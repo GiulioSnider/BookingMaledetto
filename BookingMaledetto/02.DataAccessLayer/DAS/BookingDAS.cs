@@ -1,4 +1,5 @@
 ﻿using BookingMaledetto._02.DataAccessLayer.Interfaces;
+using BookingMaledetto._03.Models.RegistrationModels;
 
 namespace BookingMaledetto._02.DataAccessLayer.DAS
 {
@@ -8,6 +9,13 @@ namespace BookingMaledetto._02.DataAccessLayer.DAS
         public BookingDAS(BookingMaledettoDbContext ctx)
         {
             _ctx = ctx;
+        }
+
+        public Registration AddRegistration(Registration registrationToAdd)
+        {
+            var registrationAdded = _ctx.Add(registrationToAdd);
+            _ctx.SaveChanges();
+            return registrationAdded.Entity;
         }
     }
 }

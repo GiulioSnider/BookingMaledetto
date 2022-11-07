@@ -1,4 +1,5 @@
 ﻿using BookingMaledetto._01.BusinessLayer.Interfaces;
+using BookingMaledetto._03.Models.RegistrationModels.Post;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,6 +19,13 @@ namespace BookingMaledetto._00.PresentationLayer.Controllers
         public IActionResult GetAllBookings()
         {
             return Ok();
+        }
+
+        [HttpPost]
+        public IActionResult PostRegistration([FromBody]PostRegistrationDTO postRegistration)
+        {
+            var registrationAdded = _bookingWorkerService.PostRegistration(postRegistration);
+            return Ok(registrationAdded);
         }
     }
 }
