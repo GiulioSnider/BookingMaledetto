@@ -10,4 +10,18 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="01.BusinessLayer\Interfaces\" />
+    <Folder Include="01.BusinessLayer\Services\" />
+    <Folder Include="02.DataAccessLayer\Interfaces\" />
+    <Folder Include="02.DataAccessLayer\DAS\" />
+    <Folder Include="03.Models\Booking\Get\" />
+    <Folder Include="03.Models\Booking\Put\" />
+    <Folder Include="03.Models\Booking\Post\" />
+    <Folder Include="03.Models\Guest\Post\" />
+    <Folder Include="03.Models\Hotel\Post\" />
+    <Folder Include="03.Models\Hotel\Put\" />
+    <Folder Include="03.Models\Room\Post\" />
+  </ItemGroup>
+
 </Project>
