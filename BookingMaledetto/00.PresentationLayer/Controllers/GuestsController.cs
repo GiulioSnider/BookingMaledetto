@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using BookingMaledetto._01.BusinessLayer.Interfaces;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookingMaledetto._00.PresentationLayer.Controllers
@@ -7,5 +8,10 @@ namespace BookingMaledetto._00.PresentationLayer.Controllers
     [ApiController]
     public class GuestsController : ControllerBase
     {
+        private readonly IGuestWorkerService _guestWorkerService;
+        public GuestsController(IGuestWorkerService guestWorkerService)
+        {
+            _guestWorkerService = guestWorkerService;
+        }
     }
 }
