@@ -13,5 +13,11 @@ namespace BookingMaledetto._00.PresentationLayer.Controllers
         {
             _bookingWorkerService = bookingWorkerService;
         }
+
+        [HttpGet]
+        public IActionResult GetAllBookings()
+        {
+            return Ok();
+        }
     }
 }
