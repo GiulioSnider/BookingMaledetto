@@ -1,7 +1,9 @@
 using BookingMaledetto._01.BusinessLayer.Interfaces;
 using BookingMaledetto._01.BusinessLayer.Services;
+using BookingMaledetto._02.DataAccessLayer;
 using BookingMaledetto._02.DataAccessLayer.DAS;
 using BookingMaledetto._02.DataAccessLayer.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,6 +22,8 @@ builder.Services.AddScoped<IBookingDAS, BookingDAS>();
 builder.Services.AddScoped<IGuestDAS, GuestDAS>();
 builder.Services.AddScoped<IHotelDAS, HotelDAS>();
 builder.Services.AddScoped<IRoomDAS, RoomDAS>();
+
+builder.Services.AddDbContext<BookingMaledettoDbContext>(option => option.UseSqlServer(@"server=(localdb)\mssqllocaldb;Database=BookingMaledetto"));
 
 var app = builder.Build();
 
