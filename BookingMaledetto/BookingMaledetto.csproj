@@ -11,13 +11,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="03.Models\Booking\Get\" />
-    <Folder Include="03.Models\Booking\Put\" />
-    <Folder Include="03.Models\Booking\Post\" />
-    <Folder Include="03.Models\Guest\Post\" />
-    <Folder Include="03.Models\Hotel\Post\" />
-    <Folder Include="03.Models\Hotel\Put\" />
-    <Folder Include="03.Models\Room\Post\" />
+    <Folder Include="03.Models\GuestModels\Post\" />
+    <Folder Include="03.Models\HotelModels\Post\" />
+    <Folder Include="03.Models\HotelModels\Put\" />
+    <Folder Include="03.Models\RegistrationModels\Get\" />
+    <Folder Include="03.Models\RegistrationModels\Post\" />
+    <Folder Include="03.Models\RegistrationModels\Put\" />
+    <Folder Include="03.Models\RoomModels\Post\" />
   </ItemGroup>
 
 </Project>
