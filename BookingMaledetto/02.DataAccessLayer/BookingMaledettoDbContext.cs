@@ -8,10 +8,10 @@ namespace BookingMaledetto._02.DataAccessLayer
 {
     public class BookingMaledettoDbContext : DbContext
     {
-        DbSet<Guest> Guests { get; set; }
-        DbSet<Hotel> Hotels { get; set; }
-        DbSet<Room> Rooms { get; set; }
-        DbSet<Registration> Registrations { get; set; }
+        public DbSet<Guest> Guests { get; set; }
+        public DbSet<Hotel> Hotels { get; set; }
+        public DbSet<Room> Rooms { get; set; }
+        public DbSet<Registration> Registrations { get; set; }
 
         public BookingMaledettoDbContext(DbContextOptions<BookingMaledettoDbContext> options) : base(options)
         {

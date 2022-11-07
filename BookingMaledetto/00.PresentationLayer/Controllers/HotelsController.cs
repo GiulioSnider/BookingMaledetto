@@ -18,7 +18,8 @@ namespace BookingMaledetto._00.PresentationLayer.Controllers
         [HttpPost]
         public IActionResult PostHotel([FromBody] PostHotelDTO postHotelDTO)
         {
-            return Ok();
+            var hotelAdded = _hotelWorkerService.AddHotel(postHotelDTO);
+            return Ok(hotelAdded);
         }
     }
 
