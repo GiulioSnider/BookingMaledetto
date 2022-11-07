@@ -17,5 +17,10 @@ namespace BookingMaledetto._02.DataAccessLayer.DAS
             _ctx.SaveChanges();
             return registrationAdded.Entity;
         }
+
+        public IEnumerable<Registration> GetAllRegistrations()
+        {
+            return _ctx.Registrations;
+        }
     }
 }

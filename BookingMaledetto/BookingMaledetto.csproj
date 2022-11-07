@@ -18,7 +18,6 @@
 
   <ItemGroup>
     <Folder Include="03.Models\HotelModels\Put\" />
-    <Folder Include="03.Models\RegistrationModels\Get\" />
     <Folder Include="03.Models\RegistrationModels\Post\" />
     <Folder Include="03.Models\RegistrationModels\Put\" />
   </ItemGroup>

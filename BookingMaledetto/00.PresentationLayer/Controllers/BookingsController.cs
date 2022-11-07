@@ -18,7 +18,8 @@ namespace BookingMaledetto._00.PresentationLayer.Controllers
         [HttpGet]
         public IActionResult GetAllBookings()
         {
-            return Ok();
+            var registrations = _bookingWorkerService.GetAllRegistrations();
+            return Ok(registrations);
         }
 
         [HttpPost]
