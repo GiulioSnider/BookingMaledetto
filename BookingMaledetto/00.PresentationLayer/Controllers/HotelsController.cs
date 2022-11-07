@@ -1,4 +1,5 @@
 ﻿using BookingMaledetto._01.BusinessLayer.Interfaces;
+using BookingMaledetto._03.Models.HotelModels.Post;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,5 +14,14 @@ namespace BookingMaledetto._00.PresentationLayer.Controllers
         {
             _hotelWorkerService = hotelWorkerService;
         }
+
+        [HttpPost]
+        public IActionResult PostHotel([FromBody] PostHotelDTO postHotelDTO)
+        {
+            var hotelAdded = _hotelWorkerService.AddHotel(postHotelDTO);
+            return Ok(hotelAdded);
+        }
     }
+
+    
 }
