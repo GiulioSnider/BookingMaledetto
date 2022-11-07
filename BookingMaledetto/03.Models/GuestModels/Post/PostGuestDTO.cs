@@ -2,5 +2,7 @@
 {
     public class PostGuestDTO
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
     }
 }
