@@ -17,8 +17,9 @@ namespace BookingMaledetto._00.PresentationLayer.Controllers
 
         [HttpPost]
         public IActionResult PostGuest([FromBody]PostGuestDTO postGuest)
-        {
-            return Ok();
+        {            
+            var postedGuest = _guestWorkerService.AddGuest(postGuest);
+            return Ok(postedGuest);
         }
     }
 }
