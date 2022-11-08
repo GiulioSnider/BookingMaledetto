@@ -23,10 +23,19 @@ namespace BookingMaledetto._00.PresentationLayer.Controllers
         }
 
         [HttpPost]
-        public IActionResult PostRegistration([FromBody]PostRegistrationDTO postRegistration)
+        public IActionResult PostRegistration([FromBody] PostRegistrationDTO postRegistration)
         {
-            var registrationAdded = _bookingWorkerService.PostRegistration(postRegistration);
-            return Ok(registrationAdded);
+            try
+            {
+                var registrationAdded = _bookingWorkerService.PostRegistration(postRegistration);
+                return Ok(registrationAdded);
+
+            } 
+            catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
         }
+
     }
 }

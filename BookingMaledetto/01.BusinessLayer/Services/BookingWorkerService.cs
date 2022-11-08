@@ -9,10 +9,15 @@ namespace BookingMaledetto._01.BusinessLayer.Services
     public class BookingWorkerService : IBookingWorkerService
     {
         private readonly IBookingDAS _bookingDAS;
-        public BookingWorkerService(IBookingDAS bookingDAS)
+        private readonly IGuestDAS _guestDAS;
+        private readonly IRoomDAS _roomDAS;
+        public BookingWorkerService(IBookingDAS bookingDAS, IGuestDAS guestDAS, IRoomDAS roomDAS)
         {
             _bookingDAS = bookingDAS;
+            _guestDAS = guestDAS;
+            _roomDAS = roomDAS;
         }
+
 
         public IEnumerable<LightRegistration> GetAllRegistrations()
         {
@@ -43,8 +48,24 @@ namespace BookingMaledetto._01.BusinessLayer.Services
             return lightRegistrations;
         }
 
+
         public ExitPostRegistrationDTO PostRegistration(PostRegistrationDTO postRegistration)
         {
+
+            var guestFromId = _guestDAS.GetById(postRegistration.GuestId);
+            var roomFromId = _roomDAS.GetById(postRegistration.RoomId);
+
+            var isRoomAvailable = roomFromId.Registrations.All(registration =>
+                                    postRegistration.EndDate < registration.StartDate ||
+                                    postRegistration.StartDate > registration.EndDate);
+
+            if (!isRoomAvailable)
+            {
+                throw new ArgumentException("Room is not available");
+            }
+
+
+
             var registrationToAdd = new Registration
             {
                 StartDate = postRegistration.StartDate,
