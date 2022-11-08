@@ -87,5 +87,10 @@ namespace BookingMaledetto._01.BusinessLayer.Services
 
             return registrationToExit;
         }
+
+        public void DeleteRegistration(int id)
+        {
+            _bookingDAS.RemoveRegistration(id);
+        }
     }
 }

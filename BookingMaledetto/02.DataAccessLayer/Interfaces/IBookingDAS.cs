@@ -6,5 +6,6 @@ namespace BookingMaledetto._02.DataAccessLayer.Interfaces
     {
         Registration AddRegistration(Registration registrationToAdd);
         IEnumerable<Registration> GetAllRegistrations();
+        void RemoveRegistration(int id);
     }
 }

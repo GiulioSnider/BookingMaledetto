@@ -22,5 +22,14 @@ namespace BookingMaledetto._02.DataAccessLayer.DAS
         {
             return _ctx.Registrations;
         }
+
+        public void RemoveRegistration(int id)
+        {
+            var registrationFromDb = _ctx.Registrations.Single(registrationFromDb => 
+                                        registrationFromDb.RegistrationId == id);
+
+            _ctx.Registrations.Remove(registrationFromDb);
+            _ctx.SaveChanges();
+        }
     }
 }

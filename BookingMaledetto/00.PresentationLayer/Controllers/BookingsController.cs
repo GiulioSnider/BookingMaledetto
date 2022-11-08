@@ -37,5 +37,20 @@ namespace BookingMaledetto._00.PresentationLayer.Controllers
             }
         }
 
+        [HttpDelete("{id}")]
+
+        public IActionResult DeleteRegistration(int id)
+        {
+            try
+            {
+                _bookingWorkerService.DeleteRegistration(id);
+                return NoContent();
+
+            } catch(Exception e)
+            {
+                return BadRequest(e.Message);
+            }
+        }
+
     }
 }
